@@ -51,9 +51,6 @@ def initTabs(root):
 				Reg_Mail.set("")
 				txtRegUsername.focus()
 			else:
-				#db.produit_add(conn, nom_produit, lt_prix, lt_m2, libelle_produit)
-				#res_produit()
-
 				if db_reglog[1] != username:
 					if password != password2:
 						messagebox.showinfo("Please try again !", "Your password is not matching... ")
@@ -196,8 +193,8 @@ def initTabs(root):
 	Username = StringVar()
 	Password = StringVar()
 
-	lblTitle = Label(TabConrolLoginFrame, text='\t TAB LOGIN SYSTEM \t',font=('arial', 30, 'bold'),
-	                 fg='Ghost White', bg='Cadet Blue',  relief='ridge', bd=10)
+	lblTitle = Label(TabConrolLoginFrame, text='\t LOGIN SYSTEM \t', font=('arial', 30, 'bold'),
+	                 fg='Ghost White', bg='Cadet Blue', relief='ridge', bd=10)
 	lblTitle.pack(side=TOP, fill=X, expand="yes", padx=20, pady=10)
 
 	LoginFrame1 = LabelFrame(TabConrolLoginFrame, font=('arial', 20, 'bold'), fg='Ghost White', bg='Cadet Blue', relief='ridge', bd=10)
@@ -295,8 +292,7 @@ def initTabs(root):
 	trv.heading(8, text="E-MAIL :\t")
 	trv.heading(9, text="TVA :\t")
 
-	trv.bind('<Double 1>')#, getrow)
-	#update(conn)
+	trv.bind('<Double 1>')
 
 	# ==================================================== ~ PRODUIT TAB ~ FONCTIONS ~ ========================================================#
 
@@ -439,7 +435,7 @@ def initTabs(root):
 	cbtn = Button(wrapper2, text="RESET", width=15, font=('arial', 10, 'bold'), fg='Cadet Blue', bd=6, command=clear_produit)
 	cbtn.pack(side=tk.LEFT, padx=10, pady=3)
 
-	# User Data Section
+	# Produit Data Section
 	lbl1 = Label(wrapper3, text="\t ID : ", font=('arial', 12, 'bold'), fg='Ghost White', bg='Cadet Blue', bd=6)
 	lbl1.grid(row=0, column=0, padx=5, pady=3, sticky=E)
 	ent1 = Entry(wrapper3, textvariable=tid_produit, font=('arial', 12, 'bold'), bd=6, width=25, state='readonly')
@@ -466,7 +462,6 @@ def initTabs(root):
 	ent5.grid(row=4, column=1, padx=10, pady=3)
 
 	# ==================================================== ~ PRODUIT TAB ~ BUTTONS ~  ========================================================#
-
 	add_btn = Button(wrapper3, text="ADD", width=15, font=('arial', 10, 'bold'), fg='Cadet Blue', bd=6, command=add_produit)
 	up_btn = Button(wrapper3, text="UPDATE", width=15, font=('arial', 10, 'bold'), fg='Cadet Blue', bd=6, command=update_produit)
 	del_btn = Button(wrapper3, text="DELETE", width=15, font=('arial', 10, 'bold'), fg='Cadet Blue', bd=6, command=del_produit)

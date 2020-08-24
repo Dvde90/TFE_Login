@@ -43,7 +43,6 @@ def init_db(conn):
     cursor.execute(qr_ii_produit, ('Shine-On', 45, 20, 'Vitre Auto-Nettoyant'))
     cursor.execute(qr_ii_produit, ('Inducoat', 32, 8, 'Peinture Desinfectant'))
     cursor.execute(qr_ii_produit, ('Oxil-Pro', 28, 300, 'Desinfectant'))
-
     conn.commit()
 
 def close_db(conn):
@@ -73,7 +72,6 @@ def log_reg(conn, username, password, mail):
     cursor = conn.cursor()
     cursor.execute(sql, (username, sha1(password.encode()).hexdigest(), mail))
     conn.commit()
-    #conn.close()
 
 def log_read(conn):
     sql = "SELECT * FROM t_logins "
